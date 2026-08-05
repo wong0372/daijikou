@@ -104,7 +104,6 @@
         <p class="eyebrow">About the artist</p>
         <h2>The artist’s own introduction will appear here.</h2>
         <p>This section is intentionally left flexible so Gary can write in his own voice. It can include his background, influences, working process and what he hopes viewers feel when they encounter his work.</p>
-        <p class="placeholder-note">Editable later in Framer without code.</p>
       </div>
     </section>
 
@@ -131,14 +130,46 @@
     <section id="contact" class="section contact reveal">
       <p class="eyebrow">Contact</p>
       <h2>Let’s create something memorable.</h2>
-      <p class="contact-note">Email and Instagram can be added here after Gary confirms the details.</p>
-      <a class="contact-button" href="mailto:shiu.tatsusame@gmail.com">Start a conversation</a>
+      
+      <div class="contact-links">
+        <a class="contact-button" href="mailto:shiu.tatsusame@gmail.com">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+          </svg>
+          shiu.tatsusame@gmail.com
+        </a>
+
+        <a class="contact-button" href="https://instagram.com/shiu.tatsusame" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          @shiu.tatsusame
+        </a>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <span>大隻廣</span>
     <span>Hong Kong</span>
+    <div class="footer-socials">
+      <a href="mailto:shiu.tatsusame@gmail.com" aria-label="Email">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+        </svg>
+      </a>
+      <a href="https://instagram.com/shiu.tatsusame" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      </a>
+    </div>
     <span>© <span id="year"></span></span>
   </footer>
 
