@@ -122,17 +122,26 @@ h2 { font-size: clamp(3.2rem, 6vw, 7rem); letter-spacing: -.035em; }
 .collection-card span { color: var(--muted); font-size: .78rem; }
 .collection-card strong { font-family: var(--serif-en); font-size: 1.45rem; font-weight: 500; }
 
+/* About Section (Beige Background & Circular Profile Image) */
 .about {
   display: grid;
   grid-template-columns: .9fr 1.1fr;
   gap: 9vw;
   align-items: center;
-  background: var(--ink);
-  color: var(--paper-light);
+  background: var(--paper);
+  color: var(--ink);
 }
-.about-image img { max-height: 78vh; object-fit: cover; filter: grayscale(100%); }
+
+.about-image img {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
 .about-copy h2 { font-size: clamp(3rem, 5vw, 6rem); }
-.about-copy > p:not(.eyebrow) { max-width: 620px; color: rgba(251,250,246,.68); }
+.about-copy > p:not(.eyebrow) { max-width: 620px; color: var(--muted); }
 
 .collaborate { background: var(--paper-light); }
 .collab-intro { max-width: 980px; }
@@ -216,6 +225,7 @@ h2 { font-size: clamp(3.2rem, 6vw, 7rem); letter-spacing: -.035em; }
   .feature-image { min-height: auto; }
   .collection-grid { grid-template-columns: 1fr; gap: 52px; }
   .about { grid-template-columns: 1fr; }
+  .about-image img { width: 240px; height: 240px; }
   .collab-art { grid-template-columns: 1fr; }
   .collab-art img { height: auto; max-height: 65vh; }
   .site-footer { gap: 18px; flex-wrap: wrap; }
@@ -230,7 +240,7 @@ h2 { font-size: clamp(3.2rem, 6vw, 7rem); letter-spacing: -.035em; }
 .about-copy .bio-chinese p,
 .about-copy .bio-english p {
   margin-bottom: 16px;
-  color: rgba(251, 250, 246, 0.85);
+  color: var(--muted);
   font-size: 0.95rem;
   line-height: 1.8;
 }
@@ -239,5 +249,5 @@ h2 { font-size: clamp(3.2rem, 6vw, 7rem); letter-spacing: -.035em; }
   font-size: 1.8rem;
   margin-top: 40px;
   margin-bottom: 16px;
-  color: var(--paper-light);
+  color: var(--ink);
 }
