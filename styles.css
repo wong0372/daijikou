@@ -122,14 +122,14 @@ h2 { font-size: clamp(3.2rem, 6vw, 7rem); letter-spacing: -.035em; }
 .collection-card span { color: var(--muted); font-size: .78rem; }
 .collection-card strong { font-family: var(--serif-en); font-size: 1.45rem; font-weight: 500; }
 
-/* About Section (Beige Background & Circular Profile Image) */
+/* About Section (Dark/Black Background) */
 .about {
   display: grid;
   grid-template-columns: .9fr 1.1fr;
   gap: 9vw;
   align-items: center;
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--ink);
+  color: var(--paper-light);
 }
 
 .about-image img {
@@ -141,7 +141,6 @@ h2 { font-size: clamp(3.2rem, 6vw, 7rem); letter-spacing: -.035em; }
 }
 
 .about-copy h2 { font-size: clamp(3rem, 5vw, 6rem); }
-.about-copy > p:not(.eyebrow) { max-width: 620px; color: var(--muted); }
 
 .collaborate { background: var(--paper-light); }
 .collab-intro { max-width: 980px; }
@@ -231,7 +230,7 @@ h2 { font-size: clamp(3.2rem, 6vw, 7rem); letter-spacing: -.035em; }
   .site-footer { gap: 18px; flex-wrap: wrap; }
 }
 
-/* About Bio Styling */
+/* About Bio Text Styling (Dark Background) */
 .about-copy .bio-chinese,
 .about-copy .bio-english {
   margin-bottom: 32px;
@@ -240,7 +239,7 @@ h2 { font-size: clamp(3.2rem, 6vw, 7rem); letter-spacing: -.035em; }
 .about-copy .bio-chinese p,
 .about-copy .bio-english p {
   margin-bottom: 16px;
-  color: var(--muted);
+  color: rgba(251, 250, 246, 0.78);
   font-size: 0.95rem;
   line-height: 1.8;
 }
@@ -249,5 +248,5 @@ h2 { font-size: clamp(3.2rem, 6vw, 7rem); letter-spacing: -.035em; }
   font-size: 1.8rem;
   margin-top: 40px;
   margin-bottom: 16px;
-  color: var(--ink);
+  color: var(--paper-light);
 }
