@@ -220,3 +220,24 @@ h2 { font-size: clamp(3.2rem, 6vw, 7rem); letter-spacing: -.035em; }
   .collab-art img { height: auto; max-height: 65vh; }
   .site-footer { gap: 18px; flex-wrap: wrap; }
 }
+
+/* About Bio Styling */
+.about-copy .bio-chinese,
+.about-copy .bio-english {
+  margin-bottom: 32px;
+}
+
+.about-copy .bio-chinese p,
+.about-copy .bio-english p {
+  margin-bottom: 16px;
+  color: rgba(251, 250, 246, 0.85);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.about-copy .bio-eng-title {
+  font-size: 1.8rem;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  color: var(--paper-light);
+}
