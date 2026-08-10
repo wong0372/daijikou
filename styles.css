@@ -12,14 +12,23 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
-  background: var(--paper);
+  background-color: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
   font-size: 16px;
   line-height: 1.6;
+  position: relative;
+  z-index: 0;
 }
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
 img { display: block; width: 100%; height: auto; }
 a { color: inherit; text-decoration: none; }
 
@@ -52,6 +61,7 @@ a { color: inherit; text-decoration: none; }
   gap: 4vw;
   position: relative;
   overflow: hidden;
+  background-color: var(--paper);
 }
 .hero-copy { max-width: 680px; }
 .eyebrow {
@@ -69,7 +79,7 @@ h1, h2, h3 {
 }
 h1 { font-size: clamp(4rem, 8vw, 8.7rem); letter-spacing: -.045em; }
 .hero-subtitle { margin-top: 28px; color: var(--muted); letter-spacing: .08em; }
-.hero-art img { max-height: 78vh; object-fit: contain; mix-blend-mode: multiply; }
+.hero-art img { max-height: 78vh; object-fit: contain; }
 .scroll-cue {
   position: absolute;
   left: 5vw;
@@ -80,7 +90,7 @@ h1 { font-size: clamp(4rem, 8vw, 8.7rem); letter-spacing: -.045em; }
   color: var(--muted);
 }
 
-.section { padding: 130px 6vw; }
+.section { padding: 130px 6vw; position: relative; z-index: 2; }
 .section-heading { max-width: 860px; margin-bottom: 76px; }
 h2 { font-size: clamp(3.2rem, 6vw, 7rem); letter-spacing: -.035em; }
 
@@ -103,10 +113,89 @@ h2 { font-size: clamp(3.2rem, 6vw, 7rem); letter-spacing: -.035em; }
 }
 .feature-image img { width: 100%; height: 100%; max-height: 76vh; object-fit: contain; transition: transform .7s cubic-bezier(.2,.7,.2,1); }
 .feature:hover .feature-image img { transform: scale(1.025); }
-.ink-paper img { mix-blend-mode: multiply; }
+.ink-paper img { mix-blend-mode: normal; }
+.collab-art img { mix-blend-mode: normal; }
 .feature-copy span { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
 .feature-copy h3 { margin: 14px 0 22px; font-size: clamp(2.8rem, 5vw, 5.5rem); }
 .feature-copy p { max-width: 430px; color: var(--muted); }
+
+/* Vintage Newspaper Comics Section */
+.comic-archive {
+  background: var(--paper-light);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.section-sub {
+  max-width: 680px;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.comic-showcase {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 20px;
+}
+
+.comic-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
+.comic-image-wrapper {
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+}
+
+.comic-image-wrapper img {
+  max-height: 200px;
+  object-fit: contain;
+  filter: contrast(108%);
+}
+
+.comic-meta {
+  margin-top: 20px;
+}
+
+.comic-tag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--seal);
+  font-weight: 600;
+}
+
+.comic-meta h3 {
+  font-size: 1.5rem;
+  margin: 8px 0 10px;
+  font-family: var(--serif-zh), var(--serif-en);
+}
+
+.comic-meta p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.6;
+}
 
 .collection-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .collection-card { position: relative; overflow: hidden; background: #ebe6da; }
@@ -122,7 +211,7 @@ h2 { font-size: clamp(3.2rem, 6vw, 7rem); letter-spacing: -.035em; }
 .collection-card span { color: var(--muted); font-size: .78rem; }
 .collection-card strong { font-family: var(--serif-en); font-size: 1.45rem; font-weight: 500; }
 
-/* About Section (Dark/Black Background) */
+/* About Section (Black/Dark Background) */
 .about {
   display: grid;
   grid-template-columns: .9fr 1.1fr;
@@ -142,6 +231,27 @@ h2 { font-size: clamp(3.2rem, 6vw, 7rem); letter-spacing: -.035em; }
 
 .about-copy h2 { font-size: clamp(3rem, 5vw, 6rem); }
 
+/* About Bio Text Styling */
+.about-copy .bio-chinese,
+.about-copy .bio-english {
+  margin-bottom: 32px;
+}
+
+.about-copy .bio-chinese p,
+.about-copy .bio-english p {
+  margin-bottom: 16px;
+  color: rgba(251, 250, 246, 0.78);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.about-copy .bio-eng-title {
+  font-size: 1.8rem;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  color: var(--paper-light);
+}
+
 .collaborate { background: var(--paper-light); }
 .collab-intro { max-width: 980px; }
 .collab-intro p:last-child { max-width: 650px; color: var(--muted); }
@@ -156,7 +266,7 @@ h2 { font-size: clamp(3.2rem, 6vw, 7rem); letter-spacing: -.035em; }
 .collab-art img { width: 100%; height: 62vh; object-fit: contain; background: var(--paper); mix-blend-mode: multiply; }
 
 /* Contact Section & Icon Buttons */
-.contact { text-align: center; padding-top: 180px; padding-bottom: 180px; }
+.contact { text-align: center; padding-top: 180px; padding-bottom: 180px; background-color: var(--paper); }
 .contact h2 { max-width: 940px; margin: 0 auto; }
 .contact-links {
   display: flex;
@@ -174,6 +284,7 @@ h2 { font-size: clamp(3.2rem, 6vw, 7rem); letter-spacing: -.035em; }
   border: 1px solid var(--ink);
   border-radius: 50%;
   transition: background .25s ease, color .25s ease, transform .25s ease;
+  background-color: transparent;
 }
 .contact-button svg {
   display: block;
@@ -194,6 +305,7 @@ h2 { font-size: clamp(3.2rem, 6vw, 7rem); letter-spacing: -.035em; }
   border-top: 1px solid var(--line);
   font-size: .75rem;
   color: var(--muted);
+  background-color: var(--paper);
 }
 
 .reveal { opacity: 0; transform: translateY(34px); transition: opacity .85s ease, transform .85s cubic-bezier(.2,.7,.2,1); }
@@ -222,6 +334,7 @@ h2 { font-size: clamp(3.2rem, 6vw, 7rem); letter-spacing: -.035em; }
   .feature, .feature-reverse { grid-template-columns: 1fr; gap: 34px; margin-bottom: 95px; }
   .feature-reverse .feature-image { order: 0; }
   .feature-image { min-height: auto; }
+  .comic-showcase { grid-template-columns: 1fr; gap: 28px; }
   .collection-grid { grid-template-columns: 1fr; gap: 52px; }
   .about { grid-template-columns: 1fr; }
   .about-image img { width: 240px; height: 240px; }
@@ -230,23 +343,3 @@ h2 { font-size: clamp(3.2rem, 6vw, 7rem); letter-spacing: -.035em; }
   .site-footer { gap: 18px; flex-wrap: wrap; }
 }
 
-/* About Bio Text Styling (Dark Background) */
-.about-copy .bio-chinese,
-.about-copy .bio-english {
-  margin-bottom: 32px;
-}
-
-.about-copy .bio-chinese p,
-.about-copy .bio-english p {
-  margin-bottom: 16px;
-  color: rgba(251, 250, 246, 0.78);
-  font-size: 0.95rem;
-  line-height: 1.8;
-}
-
-.about-copy .bio-eng-title {
-  font-size: 1.8rem;
-  margin-top: 40px;
-  margin-bottom: 16px;
-  color: var(--paper-light);
-}
